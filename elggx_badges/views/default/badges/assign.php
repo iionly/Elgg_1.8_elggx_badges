@@ -11,7 +11,7 @@
     $entities = badges_get_entities_from_metadata_by_value($meta_array, 'object', 'badge', false, 0, 0, 999999, 0, 'v1.string');
 
     foreach ($entities as $entity) {
-        $label = "<img src=\"{$vars['url']}action/badges/view?{$tokenRequest}&file_guid={$entity->guid}\"> " . $entity->title . " - {$entity->badges_userpoints} points";
+        $label = "<img src=\"" . elgg_get_site_url() . "action/badges/view?{$tokenRequest}&file_guid={$entity->guid}\"> " . $entity->title . " - {$entity->badges_userpoints} points";
         $options[$label] = $entity->guid;
     }
 
@@ -19,7 +19,7 @@
 
 <br>
 <div id="badges_assign_form">
-    <form action="<?php echo $vars['url']; ?>action/badges/assign" method="post" enctype="multipart/form-data">
+    <form action="<?php echo elgg_get_site_url(); ?>action/badges/assign" method="post" enctype="multipart/form-data">
     <p>
         <?php echo elgg_view('input/hidden', array('name' => '__elgg_token', 'value' => $token)); ?>
         <?php echo elgg_view('input/hidden', array('name' => '__elgg_ts', 'value' => $ts)); ?>
@@ -40,7 +40,7 @@
         <?php echo elgg_view("input/radio",array('name' => 'badge', 'value' => $entity->guid,  'options' => $options)); ?><br />
         <br /><br />
 
-        <br /><input type="submit" class="submit_button" value="<?php echo elgg_echo("save"); ?>" />
+        <br /><input type="submit" class="elgg-button-submit" value="<?php echo elgg_echo("save"); ?>" />
     </p>
     </form>
 </div>

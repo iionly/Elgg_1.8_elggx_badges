@@ -1,10 +1,5 @@
 <?php
 
-global $CONFIG;
-
-admin_gatekeeper();
-action_gatekeeper();
-
 $user = get_user_by_username(get_input('username'));
 
 if ($user) {

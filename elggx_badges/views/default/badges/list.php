@@ -27,8 +27,8 @@
 
     $html = $nav;
 
-    $html .= "<div><br><table><tr><th width=\"40%\"><b><a href=\"{$vars['url']}admin/administer_utilities/elggx_badges.php?tab=list&sort=name\">".elgg_echo('badges:name')."</a></b></th>";
-    $html .= "<th width=\"10%\"><b><a href=\"{$vars['url']}admin/administer_utilities/elggx_badges.php?tab=list&sort=points\">".elgg_echo('badges:points')."</a></b></th>";
+    $html .= "<div><br><table><tr><th width=\"40%\"><b><a href=\"" . elgg_get_site_url() . "admin/administer_utilities/elggx_badges.php?tab=list&sort=name\">".elgg_echo('badges:name')."</a></b></th>";
+    $html .= "<th width=\"10%\"><b><a href=\"" . elgg_get_site_url() . "admin/administer_utilities/elggx_badges.php?tab=list&sort=points\">".elgg_echo('badges:points')."</a></b></th>";
     $html .= "<th width=\"10%\"><b>".elgg_echo('badges:image')."</b></th>";
     $html .= "<th width=\"10%\"><b>".elgg_echo('badges:action')."</b></tr>";
     $html .= "<tr><td colspan=4><hr></td></tr>";
@@ -37,11 +37,11 @@
 
         $html .= "<tr><td>{$entity->title}</td>";
         $html .= "<td>{$entity->badges_userpoints}</td>";
-        $html .= "<td><img src=\"{$vars['url']}action/badges/view?{$tokenRequest}&file_guid={$entity->guid}\"></td>";
+        $html .= "<td><img src=\"" . elgg_get_site_url() . "action/badges/view?{$tokenRequest}&file_guid={$entity->guid}\"></td>";
         $html .= "<td>";
-        $html .= "<a href=\"{$vars['url']}admin/administer_utilities/elggx_badges?tab=edit&guid={$entity->guid}&__elgg_token=$token&__elgg_ts=$ts\">".elgg_echo('badges:edit')."</a> | ";
+        $html .= "<a href=\"" . elgg_get_site_url() . "admin/administer_utilities/elggx_badges?tab=edit&guid={$entity->guid}&__elgg_token=$token&__elgg_ts=$ts\">".elgg_echo('badges:edit')."</a> | ";
         $html .= elgg_view("output/confirmlink", array(
-                              'href' => $vars['url'] . "action/badges/delete?guid={$entity->guid}&__elgg_token=$token&__elgg_ts=$ts",
+                              'href' => elgg_get_site_url() . "action/badges/delete?guid={$entity->guid}&__elgg_token=$token&__elgg_ts=$ts",
                               'text' => elgg_echo('badges:delete'),
                               'confirm' => elgg_echo('badges:delete:confirm')
                           ));

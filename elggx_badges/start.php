@@ -1,16 +1,11 @@
 <?php
 
-include dirname(__FILE__) . "/lib/badge.php";
-
 function badges_init() {
 
     elgg_extend_view('css/elgg', 'badges/css');
     elgg_extend_view('icon/user/default','badges/icon');
 
     elgg_register_plugin_hook_handler('userpoints:update', 'all', 'badges_userpoints');
-
-    // add the class files for the badge
-    add_subtype("object", "badge", "BadgesBadge");
 
     elgg_register_admin_menu_item('administer', 'elggx_badges', 'administer_utilities');
 
@@ -213,5 +208,5 @@ elgg_register_event_handler('init','system','badges_init');
 elgg_register_action("badges/upload", $CONFIG->pluginspath . "elggx_badges/actions/upload.php", 'admin');
 elgg_register_action("badges/edit", $CONFIG->pluginspath . "elggx_badges/actions/edit.php", 'admin');
 elgg_register_action("badges/assign", $CONFIG->pluginspath . "elggx_badges/actions/assign.php", 'admin');
-elgg_register_action("badges/view", $CONFIG->pluginspath . "elggx_badges/actions/view.php", 'logged_in');
+elgg_register_action("badges/view", $CONFIG->pluginspath . "elggx_badges/actions/view.php", 'public');
 elgg_register_action("badges/delete", $CONFIG->pluginspath . "elggx_badges/actions/delete.php", 'admin');

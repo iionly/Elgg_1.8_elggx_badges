@@ -1,12 +1,13 @@
 <?php
 
-global $CONFIG;
-
-admin_gatekeeper();
-action_gatekeeper();
-
 $filename    = $_FILES['badge']['name'];
 $mime        = $_FILES['badge']['type'];
+
+
+$access_id = (int)get_input('access_id');
+if(!$access_id) {
+    $access_id = -1;
+}
 
 if (!is_array($_FILES['badge'])) {
     register_error(elgg_echo('badges:noimage'));
@@ -22,7 +23,7 @@ $file->setFilename($prefix.$filestorename);
 $file->setMimeType($mime);
 $file->originalfilename = $filename;
 $file->subtype = 'badge';
-$file->access_id = 1;
+$file->access_id = $access_id;
 $file->open("write");
 $file->write(get_uploaded_file('badge'));
 $file->close();
@@ -68,7 +69,8 @@ if ($guid && $file->simpletype == "image") {
     }
 }
 
-/* Add the name as metadata. This is a hack to
+/**
+ * Add the name as metadata. This is a hack to
  * allow sorting the admin list view by name
  * using a custom get_entities_by_metadata method.
  */
@@ -82,7 +84,7 @@ if (get_input('url') != '') {
     if (preg_match('/^http/i', $url)) {
         $file->badges_url = $url;
     } else {
-        $file->badges_url = $CONFIG->wwwroot . $url;
+        $file->badges_url = elgg_get_config('wwwroot') . $url;
     }
 }
 

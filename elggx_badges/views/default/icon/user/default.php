@@ -114,7 +114,7 @@ if (elgg_get_logged_in_user_guid() && $vars['entity']->badges_badge && (int)elgg
                 $ts = time ();
                 $token = generate_action_token ( $ts );
                 $tokenRequest = "&__elgg_token=$token&__elgg_ts=$ts";
-                $badge_url = $vars['url'] . 'action/badges/view?' . $tokenRequest . '&file_guid=' . $vars['entity']->badges_badge;
+                $badge_url = elgg_get_site_url() . 'action/badges/view?' . $tokenRequest . '&file_guid=' . $vars['entity']->badges_badge;
                 $badge_style = "width: 16px;
                 height: 16px;
                 display: block;

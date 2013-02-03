@@ -16,9 +16,9 @@ if ($guid = $object->badges_badge) {
     $tokenRequest = "&__elgg_token=$token&__elgg_ts=$ts";
 
     if ($badge_url) {
-        $badge_view = "<a href=\"{$badge_url}\"><img title=\"{$badge->title}\" src=\"{$CONFIG->wwwroot}action/badges/view?{$tokenRequest}&file_guid={$badge->guid}\"></a>";
+        $badge_view = "<a href=\"{$badge_url}\"><img title=\"{$badge->title}\" src=\"" . elgg_get_site_url() . "action/badges/view?{$tokenRequest}&file_guid={$badge->guid}\"></a>";
     } else {
-        $badge_view = "<img title=\"{$badge->title}\" src=\"{$CONFIG->wwwroot}action/badges/view?{$tokenRequest}&file_guid={$badge->guid}\">";
+        $badge_view = "<img title=\"{$badge->title}\" src=\"" . elgg_get_site_url() . "action/badges/view?{$tokenRequest}&file_guid={$badge->guid}\">";
     }
 
     $url = "<a href=\"{$performed_by->getURL()}\">{$performed_by->name}</a>";

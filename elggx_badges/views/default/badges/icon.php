@@ -22,7 +22,7 @@ if (elgg_get_context() == 'profile') {
                 <a href="<?php echo $badge->badges_url; ?>">
             <?php } ?>
 
-            <img title="<?php echo $badge->title; ?>" src="<?php echo $vars['url']; ?>action/badges/view?file_guid=<?php echo $guid . $tokenRequest; ?>">
+            <img title="<?php echo $badge->title; ?>" src="<?php echo elgg_get_site_url(); ?>action/badges/view?file_guid=<?php echo $guid . $tokenRequest; ?>">
 
             <?php if ($badge->badges_url) { ?>
                 </a>

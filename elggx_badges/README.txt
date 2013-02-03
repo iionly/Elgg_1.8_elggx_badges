@@ -1,6 +1,6 @@
 Elggx Bagdes plugin for Elgg 1.8
-Latest Version: 1.8.4
-Released: 2012-04-29
+Latest Version: 1.8.5
+Released: 2013-02-03
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -17,6 +17,8 @@ The badge will show below the profile picture on the user's profile pages. There
 
 Installation:
 
+In case you have an earlier version of the Elggx Badges plugin installed it's best to remove the folder completely before copying the new version to the server.
+
 1. Copy the elggx_badges folder into the mod directory of your Elgg installation,
 2. Enable the plugin in the admin section of your site,
 3. Configure then the plugin settings (section "Configure" - "Settings" - "Elggx Badges"). At last upload some Badges and enter the Badges details (section "Administer" - "Utilities" - "Elggx Badges").
@@ -24,6 +26,13 @@ Installation:
 
 
 Changelog:
+
+1.8.5 (iionly):
+
+* Access level setting for badges added (you should configure the access level for previously added badges after updating to this version),
+* Code cleanup,
+* German language file added.
+
 
 1.8.4 (iionly):
 

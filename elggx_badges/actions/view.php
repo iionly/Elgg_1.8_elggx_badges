@@ -4,12 +4,8 @@
  * Badge viewer
  */
 
-action_gatekeeper();
-
 $file_guid = (int) get_input("file_guid");
 $file = get_entity($file_guid);
-
-//if (!$file) error_log("file guid: ". $file_guid);
 
 if ($file) {
     $filename = $file->originalfilename;

@@ -1,8 +1,5 @@
 <?php
 
-admin_gatekeeper();
-action_gatekeeper();
-
 $guid = (int)get_input('guid');
 
 $file = get_entity($guid);

@@ -4,4 +4,4 @@
  *
  */
 
-update_subtype('object', 'album');
+update_subtype('object', 'badge');

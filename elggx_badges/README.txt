@@ -1,6 +1,6 @@
 Elggx Bagdes plugin for Elgg 1.8
-Latest Version: 1.8.5
-Released: 2013-02-03
+Latest Version: 1.8.6
+Released: 2013-04-14
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -26,6 +26,13 @@ In case you have an earlier version of the Elggx Badges plugin installed it's be
 
 
 Changelog:
+
+1.8.6 (iionly):
+
+* Fixed a copy+paste issue in deactivate.php (this bug resulted in the Tidypics plugin to fail after the Elggx Badges plugin was disabled and could result in activity page or index page not being displayed correctly anymore).
+
+(Best way to update to version 1.8.6: do not disable the Badges plugin before the update but overwrite the elggx-badges folder directly. After the new version is copied to the server execute "Upgrade" from the admin dashboard)
+
 
 1.8.5 (iionly):
 

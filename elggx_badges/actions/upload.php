@@ -72,7 +72,6 @@ if ($guid && $file->simpletype == "image") {
 /**
  * Add the name as metadata. This is a hack to
  * allow sorting the admin list view by name
- * using a custom get_entities_by_metadata method.
  */
 $file->badges_name = get_input('name');
 
@@ -90,4 +89,4 @@ if (get_input('url') != '') {
 
 system_message(elgg_echo("badges:uploaded"));
 
-forward($_SERVER['HTTP_REFERER']);
+forward(REFERER);

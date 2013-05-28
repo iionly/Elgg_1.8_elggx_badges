@@ -13,4 +13,4 @@ if ($results != '') {
     system_message(elgg_echo("badges:delete_fail") . ' ' . $filename);
 }
 
-forward($_SERVER['HTTP_REFERER']);
+forward(REFERER);

@@ -2,33 +2,33 @@
 
     $offset = get_input('offset') ? (int)get_input('offset') : 0;
     $limit = 10;
+    $sort = get_input('sort');
 
     $ts = time ();
     $token = generate_action_token ( $ts );
     $tokenRequest = "&__elgg_token=$token&__elgg_ts=$ts";
 
-    if (get_input('sort') == 'points') {
-        $meta_array = array(array('name' => 'badges_userpoints', 'operand' => 'like', 'value' => '%'));
-        $order = 'v1.string + 0 DESC';
+    if ($sort == 'points') {
+        $order = array('name' => 'badges_userpoints', 'direction' => ASC, 'as' => integer);
     } else {
-        $meta_array = array(array('name' => 'badges_name', 'operand' => 'like', 'value' => '%'));
-        $order = 'v1.string';
+        $sort = 'name';
+        $order = array('name' => 'badges_name', 'direction' => ASC);
     }
 
-    $count = badges_get_entities_from_metadata_by_value($meta_array, 'object', 'badge', true, 0, 0, 0, 0);
-    $entities = badges_get_entities_from_metadata_by_value($meta_array, 'object', 'badge', false, 0, 0, $limit, $offset, $order);
+    $count = elgg_get_entities_from_metadata(array('type' => 'object', 'subtype' => 'badge', 'count' => true));
+    $entities = elgg_get_entities_from_metadata(array('type' => 'object', 'subtype' => 'badge', 'limit' => $limit, 'offset' => $offset, 'order_by_metadata' => $order));
 
     $nav = elgg_view('navigation/pagination',array(
-        'base_url' => $_SERVER['REQUEST_URI'],
+        'base_url' => elgg_get_site_url() . "admin/administer_utilities/elggx_badges?tab=list&sort=$sort",
         'offset' => $offset,
         'count' => $count,
-        'limit' => 5,
+        'limit' => 10,
     ));
 
     $html = $nav;
 
-    $html .= "<div><br><table><tr><th width=\"40%\"><b><a href=\"" . elgg_get_site_url() . "admin/administer_utilities/elggx_badges.php?tab=list&sort=name\">".elgg_echo('badges:name')."</a></b></th>";
-    $html .= "<th width=\"10%\"><b><a href=\"" . elgg_get_site_url() . "admin/administer_utilities/elggx_badges.php?tab=list&sort=points\">".elgg_echo('badges:points')."</a></b></th>";
+    $html .= "<div><br><table><tr><th width=\"40%\"><b><a href=\"" . elgg_get_site_url() . "admin/administer_utilities/elggx_badges?tab=list&sort=name\">".elgg_echo('badges:name')."</a></b></th>";
+    $html .= "<th width=\"10%\"><b><a href=\"" . elgg_get_site_url() . "admin/administer_utilities/elggx_badges?tab=list&sort=points\">".elgg_echo('badges:points')."</a></b></th>";
     $html .= "<th width=\"10%\"><b>".elgg_echo('badges:image')."</b></th>";
     $html .= "<th width=\"10%\"><b>".elgg_echo('badges:action')."</b></tr>";
     $html .= "<tr><td colspan=4><hr></td></tr>";

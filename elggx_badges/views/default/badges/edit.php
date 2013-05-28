@@ -15,17 +15,17 @@
             <?php echo elgg_view('input/hidden', array('name' => '__elgg_ts', 'value' => $ts)); ?>
             <?php echo elgg_view("input/hidden",array('name' => 'guid', 'value' => $badge->guid)); ?><br />
 
-            <b><?php echo elgg_echo("badges:name"); ?>:</b><br />
+            <label><?php echo elgg_echo("badges:name"); ?>:</label><br />
             <?php echo elgg_view("input/text",array('name' => 'name', 'value' => $badge->title)); ?><br />
             <?php echo elgg_echo("badges:name:info"); ?>
             <br /><br />
 
-            <b><?php echo elgg_echo("badges:description"); ?>:</b><br />
+            <label><?php echo elgg_echo("badges:description"); ?>:</label><br />
             <?php echo elgg_view("input/text",array('name' => 'description', 'value' => $badge->description)); ?><br />
             <?php echo elgg_echo("badges:description:info"); ?>
             <br /><br />
 
-            <b><?php echo elgg_echo("badges:access_id"); ?>:</b>
+            <label><?php echo elgg_echo("badges:access_id"); ?>:</label>
             <?php echo elgg_view("input/dropdown",array('name' => 'access_id',
                                                         'options_values' => array('-1' => elgg_echo('badges:access:default'),
                                                                                   '0'  => elgg_echo('PRIVATE'),
@@ -36,12 +36,12 @@
             <?php echo elgg_echo("badges:description:access_id"); ?>
             <br /><br />
 
-            <b><?php echo elgg_echo("badges:description:url"); ?>:</b><br />
+            <label><?php echo elgg_echo("badges:description:url"); ?>:</label><br />
             <?php echo elgg_view("input/text",array('name' => 'url', 'value' => $badge->badges_url)); ?><br />
             <?php echo elgg_echo("badges:description:url:info"); ?>
             <br /><br />
 
-            <b><?php echo elgg_echo("badges:points"); ?>:</b><br />
+            <label><?php echo elgg_echo("badges:points"); ?>:</label><br />
             <?php echo elgg_view("input/text",array('name' => 'points', 'value' => $badge->badges_userpoints)); ?><br />
             <?php echo elgg_echo("badges:points:info"); ?>
             <br />

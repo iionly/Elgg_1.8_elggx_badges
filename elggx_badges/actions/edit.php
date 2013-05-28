@@ -27,4 +27,4 @@ if (get_input('url') != '') {
 
 system_message(elgg_echo("badges:saved"));
 
-forward($_SERVER['HTTP_REFERER']);
+forward(REFERER);

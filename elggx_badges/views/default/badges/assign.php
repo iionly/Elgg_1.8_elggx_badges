@@ -7,11 +7,11 @@
     $token = generate_action_token ( $ts );
     $tokenRequest = "&__elgg_token=$token&__elgg_ts=$ts";
 
-    $meta_array = array(array('name' => 'badges_name', 'operand' => 'like', 'value' => '%'));
-    $entities = badges_get_entities_from_metadata_by_value($meta_array, 'object', 'badge', false, 0, 0, 999999, 0, 'v1.string');
+    $order = array('name' => 'badges_name', 'direction' => ASC);
+    $entities = elgg_get_entities_from_metadata(array('type' => 'object', 'subtype' => 'badge', 'limit' => 0, 'order_by_metadata' => $order));
 
     foreach ($entities as $entity) {
-        $label = "<img src=\"" . elgg_get_site_url() . "action/badges/view?{$tokenRequest}&file_guid={$entity->guid}\"> " . $entity->title . " - {$entity->badges_userpoints} points";
+        $label = "<img src=\"" . elgg_get_site_url() . "action/badges/view?{$tokenRequest}&file_guid={$entity->guid}\"> " . $entity->title . " - {$entity->badges_userpoints} " . elgg_echo('badges:points');
         $options[$label] = $entity->guid;
     }
 
@@ -24,7 +24,7 @@
         <?php echo elgg_view('input/hidden', array('name' => '__elgg_token', 'value' => $token)); ?>
         <?php echo elgg_view('input/hidden', array('name' => '__elgg_ts', 'value' => $ts)); ?>
 
-        <b><?php echo elgg_echo("badges:username"); ?>:</b><br />
+        <label><?php echo elgg_echo("badges:username"); ?>:</label><br />
         <?php echo elgg_view("input/text",array('name' => 'username', 'value' => $user->username)); ?>
         <br /><br />
 
@@ -36,11 +36,11 @@
         <?php echo elgg_echo("badges:lock:info"); ?>
         <br /><br />
 
-        <b><?php echo elgg_echo("badges:points"); ?>:</b><br />
+        <label><?php echo elgg_echo("badges:assign_list"); ?></label><br />
         <?php echo elgg_view("input/radio",array('name' => 'badge', 'value' => $entity->guid,  'options' => $options)); ?><br />
         <br /><br />
 
-        <br /><input type="submit" class="elgg-button-submit" value="<?php echo elgg_echo("save"); ?>" />
+        <br /><input type="submit" class="elgg-button-submit" value="<?php echo elgg_echo("badges:assign_badge"); ?>" />
     </p>
     </form>
 </div>

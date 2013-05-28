@@ -2,7 +2,6 @@
 /**
  * Badges CSS
  */
-/* margin: 5px 0 0; */
 ?>
 
 .badges_profile{

@@ -15,4 +15,4 @@ if ($guid = $user->badges_badge) {
     add_to_river('river/object/badge/assign', 'assign', $user->guid, $user->guid);
 }
 
-forward($_SERVER['HTTP_REFERER']);
+forward(REFERER);

@@ -1,6 +1,6 @@
 Elggx Bagdes plugin for Elgg 1.8
-Latest Version: 1.8.6
-Released: 2013-04-14
+Latest Version: 1.8.7
+Released: 2013-05-28
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -26,6 +26,15 @@ In case you have an earlier version of the Elggx Badges plugin installed it's be
 
 
 Changelog:
+
+1.8.7 (iionly):
+
+* Fix of pagination issue on "List of badges" tab in plugin settings (reported by Starphysique),
+* Fix of "List of badges" list ordering by name and points respectively including a working pagination for both ordering types,
+* Replacement of custom badges_get_entities_from_metadata_by_value() function in favor of Elgg's elgg_get_entities_from_metadata() function,
+* Fix / Rework of river views for the (optionally configurable) links of badges to work and to include the name of the badge in the river entry (reported by Michele),
+* Some general code cleanup.
+
 
 1.8.6 (iionly):
 

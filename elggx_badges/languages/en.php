@@ -37,7 +37,6 @@ $english = array(
     'badges:name:info' => 'This name will be displayed as tooltip when rolling over the badge image on the users profile page.',
     'badges:description' => 'Description',
     'badges:access_id' => 'Access level for this badge',
-    'badges:access:default' => 'Site default',
     'badges:description:access_id' => 'Configure who will be allowed to see the badge (including visibility of image in activity river).',
     'badges:show_description' => 'Show badge description on profile page?',
     'badges:show_description:info' => '(Selecting this option will display the text entered as badge description on the profile page.)',

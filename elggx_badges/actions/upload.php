@@ -6,7 +6,7 @@ $mime        = $_FILES['badge']['type'];
 
 $access_id = (int)get_input('access_id');
 if(!$access_id) {
-    $access_id = -1;
+    $access_id = get_default_access();
 }
 
 if (!is_array($_FILES['badge'])) {

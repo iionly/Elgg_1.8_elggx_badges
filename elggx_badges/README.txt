@@ -1,6 +1,6 @@
 Elggx Bagdes plugin for Elgg 1.8
-Latest Version: 1.8.7
-Released: 2013-05-28
+Latest Version: 1.8.8
+Released: 2013-06-01
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -26,6 +26,13 @@ In case you have an earlier version of the Elggx Badges plugin installed it's be
 
 
 Changelog:
+
+1.8.8 (iionly):
+
+* Removing "Site default" as possible selection for badges' access level. Some words of explanation regarding this: Michele reported that badges with "Site default" as access level don't behave as expected, i.e. don't follow changes done in the default access level setting of the site. After I got a clarification on this issue (https://github.com/Elgg/Elgg/issues/5565) I know now that the site default access level is not to be used for entities at all anyway. As there's no dynamic adjustment of access level of badges possible it's better to remove this option from the access level setting of badges altogether. And additionally:
+
+After Upgrading to version 1.8.8 of the Elggx Badges plugin you should reset the access level of all badges you have formerly configured with "Site default" as access level. Set the new access level to whatever suits your requirements best. If in doubt on which badges you might need to reset the access level, I would suggest to reset the access level of all badges to be on the save side.
+
 
 1.8.7 (iionly):
 

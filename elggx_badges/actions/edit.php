@@ -3,7 +3,7 @@
 $guid = (int)get_input('guid');
 $access_id = (int)get_input('access_id');
 if(!$access_id) {
-    $access_id = -1;
+    $access_id = get_default_access();
 }
 
 $badge = get_entity($guid);

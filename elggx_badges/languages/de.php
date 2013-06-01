@@ -37,7 +37,6 @@ $german = array(
     'badges:name:info' => 'Dieser Name wird als Tooltip angezeigt werden, wenn der Mauszeiger auf der Profilseite eines Benutzers über das Bild des Badges bewegt wird.',
     'badges:description' => 'Beschreibung',
     'badges:access_id' => 'Zugangslevel für dieses Badge',
-    'badges:access:default' => 'Standard der Seite',
     'badges:description:access_id' => 'Der Zugangslevel eines Badges legt fest, wer es angezeigt bekommt (inklusive Anzeige auf der Profilseite und Anzeige des Bildes im River).',
     'badges:show_description' => 'Badge-Beschreibung auf Profilseiten anzeigen?',
     'badges:show_description:info' => '(Wenn diese Option aktiv ist, wird auf Profilseiten zusätzlich zum Badge-Bild auch der als Badge-Beschreibung eingegebene Text angezeigt.)',

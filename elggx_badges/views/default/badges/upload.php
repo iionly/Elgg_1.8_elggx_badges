@@ -27,8 +27,7 @@
 
         <label><?php echo elgg_echo("badges:access_id"); ?>:</label>
         <?php echo elgg_view("input/dropdown",array('name' => 'access_id',
-                                                    'options_values' => array('-1' => elgg_echo('badges:access:default'),
-                                                                              '0'  => elgg_echo('PRIVATE'),
+                                                    'options_values' => array('0'  => elgg_echo('PRIVATE'),
                                                                               '1'  => elgg_echo('LOGGED_IN'),
                                                                               '2'  => elgg_echo('PUBLIC'),
                                                                               '-2' => elgg_echo('access:friends:label')),

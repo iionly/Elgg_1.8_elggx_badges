@@ -19,6 +19,7 @@ function badges_init() {
     elgg_register_action("badges/upload", "$base_dir/upload.php", 'admin');
     elgg_register_action("badges/edit", "$base_dir/edit.php", 'admin');
     elgg_register_action("badges/assign", "$base_dir/assign.php", 'admin');
+    elgg_register_action("badges/unassign", "$base_dir/unassign.php", 'admin');
     elgg_register_action("badges/view", "$base_dir/view.php", 'public');
     elgg_register_action("badges/delete", "$base_dir/delete.php", 'admin');
 }
@@ -31,6 +32,11 @@ function badges_user_hover_menu($hook, $type, $return, $params) {
 
         $url = "admin/administer_utilities/elggx_badges?tab=assign&user_guid={$user->guid}";
         $item = new ElggMenuItem('badges', elgg_echo('badges:assign_badge'), $url);
+        $item->setSection('admin');
+        $return[] = $item;
+
+        $url = "admin/administer_utilities/elggx_badges?tab=unassign&user_guid={$user->guid}";
+        $item = new ElggMenuItem('badges', elgg_echo('badges:unassign_badge'), $url);
         $item->setSection('admin');
         $return[] = $item;
 
@@ -70,6 +76,8 @@ function badges_userpoints($hook, $type, $return, $params) {
 
         // Announce it on the river
         $user_guid = elgg_get_logged_in_user_guid();
+        elgg_delete_river(array("view" => 'river/object/badge/assign', "subject_guid" => $user_guid, "object_guid" => $user_guid));
+        elgg_delete_river(array("view" => 'river/object/badge/award', "subject_guid" => $user_guid, "object_guid" => $user_guid));
         add_to_river('river/object/badge/award', 'award', $user_guid, $user_guid);
     }
 

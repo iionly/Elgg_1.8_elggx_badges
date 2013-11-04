@@ -103,7 +103,7 @@ if ($use_link) {
 }
 
 // Overlay of Badge on upper left corner of avatar
-if (elgg_get_logged_in_user_guid() && $vars['entity']->badges_badge && (int)elgg_get_plugin_setting('avatar_overlay', 'elggx_badges')) {
+if ($vars['entity']->badges_badge && (int)elgg_get_plugin_setting('avatar_overlay', 'elggx_badges')) {
 
     switch($size) {
             case "tiny":

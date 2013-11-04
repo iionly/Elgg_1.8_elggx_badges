@@ -1,6 +1,6 @@
 Elggx Bagdes plugin for Elgg 1.8
-Latest Version: 1.8.8
-Released: 2013-06-01
+Latest Version: 1.8.9
+Released: 2013-11-05
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -26,6 +26,13 @@ In case you have an earlier version of the Elggx Badges plugin installed it's be
 
 
 Changelog:
+
+1.8.9 (iionly):
+
+* badges that overlay the profile images also visible for logged-out site visitors instead of only an empty white area,
+* Unassigning of badges,
+* when a user gets a new badge assigned (or a new badge is awarded on reaching the necessary number of userpoints) any existing river entries telling about this action for this user will first be deleted before the new river entry is created. So, only a single river entry with the current badge of the user will exist at any time. On unassigning a badge from a user any corresponding river entry telling about the assigning of the badge will get removed.
+
 
 1.8.8 (iionly):
 

@@ -12,6 +12,8 @@ if ($user) {
 
 // Anounce it on the river
 if ($guid = $user->badges_badge) {
+    elgg_delete_river(array("view" => 'river/object/badge/award', "subject_guid" => $user->guid, "object_guid" => $user->guid));
+    elgg_delete_river(array("view" => 'river/object/badge/assign', "subject_guid" => $user->guid, "object_guid" => $user->guid));
     add_to_river('river/object/badge/assign', 'assign', $user->guid, $user->guid);
 }
 

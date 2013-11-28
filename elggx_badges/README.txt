@@ -1,6 +1,6 @@
 Elggx Bagdes plugin for Elgg 1.8
-Latest Version: 1.8.9
-Released: 2013-11-05
+Latest Version: 1.8.10
+Released: 2013-11-28
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -26,6 +26,11 @@ In case you have an earlier version of the Elggx Badges plugin installed it's be
 
 
 Changelog:
+
+1.8.10 (iionly):
+
+* on manually assigning userpoints to a user that result in the badge of this user to change the river entry informing about the new badge now correctly includes this user and not the admin user who assigned the userpoints. Also the former river entry informing about the last change of badge of the user gets deleted and no longer the river entry of the admin user's last badge change. Thanks to Michele for reporting the issue.
+
 
 1.8.9 (iionly):
 

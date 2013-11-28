@@ -75,7 +75,7 @@ function badges_userpoints($hook, $type, $return, $params) {
         }
 
         // Announce it on the river
-        $user_guid = elgg_get_logged_in_user_guid();
+        $user_guid = $params['entity']->getGUID();
         elgg_delete_river(array("view" => 'river/object/badge/assign', "subject_guid" => $user_guid, "object_guid" => $user_guid));
         elgg_delete_river(array("view" => 'river/object/badge/award', "subject_guid" => $user_guid, "object_guid" => $user_guid));
         add_to_river('river/object/badge/award', 'award', $user_guid, $user_guid);

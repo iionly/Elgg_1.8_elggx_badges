@@ -1,6 +1,6 @@
 Elggx Bagdes plugin for Elgg 1.8
-Latest Version: 1.8.10
-Released: 2013-11-28
+Latest Version: 1.8.11
+Released: 2014-09-25
 Contact: iionly@gmx.de
 License: GNU General Public License version 2
 Copyright: (c) iionly (for Elgg 1.8 version), Billy Gunn
@@ -26,6 +26,14 @@ In case you have an earlier version of the Elggx Badges plugin installed it's be
 
 
 Changelog:
+
+1.8.11 (iionly):
+
+* Slightly better support for Elgg sites served by https,
+* Badge details displayed only below 'large' profile icon on profile pages (before it could have happened that the info was displayed elsewhere on profile pages unintended depending on theme / other plugins used),
+* No badge overlay anymore on "tiny" profile images (they are just too small),
+* Code cleanup / no longer using private Elgg API functions whereever possible.
+
 
 1.8.10 (iionly):
 

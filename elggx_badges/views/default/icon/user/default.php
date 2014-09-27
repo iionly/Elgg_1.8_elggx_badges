@@ -64,17 +64,16 @@ $spacer_url = elgg_get_site_url() . '_graphics/spacer.gif';
 
 $icon_url = elgg_format_url($user->getIconURL($size));
 $icon = elgg_view('output/img', array(
-        'src' => $spacer_url,
-        'alt' => $name,
-        'title' => $name,
-        'class' => $img_class,
-        'style' => "background: url($icon_url) no-repeat;",
+	'src' => $spacer_url,
+	'alt' => $name,
+	'title' => $name,
+	'class' => $img_class,
+	'style' => "background: url($icon_url) no-repeat;",
 ));
 
 $show_menu = $use_hover && (elgg_is_admin_logged_in() || !$user->isBanned());
 
 ?>
-
 <div class="<?php echo $class; ?>">
 <td>
 <?php
@@ -105,44 +104,39 @@ if ($use_link) {
 // Overlay of Badge on upper left corner of avatar
 if ($vars['entity']->badges_badge && (int)elgg_get_plugin_setting('avatar_overlay', 'elggx_badges')) {
 
-    switch($size) {
-            case "tiny":
-            case "small":
-            case "medium":
-            case "large":
-                // set security token
-                $ts = time ();
-                $token = generate_action_token ( $ts );
-                $tokenRequest = "&__elgg_token=$token&__elgg_ts=$ts";
-                $badge_url = elgg_get_site_url() . 'action/badges/view?' . $tokenRequest . '&file_guid=' . $vars['entity']->badges_badge;
-                $badge_style = "width: 16px;
-                height: 16px;
-                display: block;
-                position: absolute;
-                top: -5px;
-                left: -5px;
-                border: 1px solid #CCC;
-                -webkit-border-radius: 3px;
-                -moz-border-radius: 3px;
-                border-radius: 3px;
-                background: white;";
-                break;
-            default:
-                break;
-    }
+	switch($size) {
+		case "small":
+		case "medium":
+		case "large":
+			$badge_url = elgg_add_action_tokens_to_url(elgg_get_site_url() . 'action/badges/view?' . 'file_guid=' . $vars['entity']->badges_badge);
+			$badge_style = "width: 16px;
+				height: 16px;
+				display: block;
+				position: absolute;
+				top: -5px;
+				left: -5px;
+				border: 1px solid #CCC;
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+				background: white;";
+			break;
+		default:
+			break;
+	}
 
-    if ($guid = $vars['entity']->badges_badge) {
-        $badge = get_entity($guid);
-    }
+	if ($guid = $vars['entity']->badges_badge) {
+		$badge = get_entity($guid);
+	}
 
-    if ($badge_style) {
+	if ($badge_style) {
 ?>
-        <div style="<?php echo $badge_style; ?>">
-        <img title="<?php echo $badge->title; ?>" src="<?php echo $badge_url; ?>">
-        </div>
+		<div style="<?php echo $badge_style; ?>">
+		<img title="<?php echo $badge->title; ?>" src="<?php echo $badge_url; ?>">
+		</div>
 
 <?php
-    }
+	}
 }
 ?>
 </td>

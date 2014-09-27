@@ -8,9 +8,9 @@ $filename = $file->getFilenameOnFilestore();
 $results = $file->delete();
 
 if ($results != '') {
-    system_message(elgg_echo("badges:delete_success"));
+	system_message(elgg_echo("badges:delete_success"));
 } else {
-    system_message(elgg_echo("badges:delete_fail") . ' ' . $filename);
+	system_message(elgg_echo("badges:delete_fail") . ' ' . $filename);
 }
 
 forward(REFERER);

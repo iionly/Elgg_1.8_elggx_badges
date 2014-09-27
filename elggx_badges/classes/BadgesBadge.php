@@ -6,15 +6,15 @@
 
 class BadgesBadge extends ElggFile {
 
-  protected function initializeAttributes() {
+	protected function initializeAttributes() {
 
-    parent::initializeAttributes();
+		parent::initializeAttributes();
 
-    $this->attributes['subtype'] = "badge";
-  }
+		$this->attributes['subtype'] = "badge";
+	}
 
-  public function __construct($guid = null) {
+	public function __construct($guid = null) {
 
-    parent::__construct($guid);
-  }
+		parent::__construct($guid);
+	}
 }

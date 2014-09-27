@@ -9,9 +9,9 @@ if (elgg_get_context() == 'profile' && $vars['size'] == 'large') {
 
 ?>
 
-<div class="mtm">
+<div class="badges_profile mtm">
 <div>
-			<span><label><?php echo elgg_echo('badges:badge:upper'); ?></label>
+			<span><?php echo elgg_echo('badges:badge:upper'); ?>
 
 			<?php if ($badge->badges_url) { ?>
 				<a href="<?php echo $badge->badges_url; ?>">

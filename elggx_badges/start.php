@@ -4,6 +4,7 @@ elgg_register_event_handler('init','system','badges_init');
 
 function badges_init() {
 
+	elgg_extend_view('css/elgg', 'badges/css');
 	elgg_extend_view('icon/user/default','badges/icon');
 
 	elgg_register_plugin_hook_handler('userpoints:update', 'all', 'badges_userpoints');
